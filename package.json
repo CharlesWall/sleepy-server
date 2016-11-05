@@ -1,6 +1,6 @@
 {
-  "name": "wake-instance",
-  "version": "0.0.0",
+  "name": "sleepy-server",
+  "version": "0.0.1",
   "description": "wake aws instance by id",
   "main": "index.js",
   "dependencies": {
