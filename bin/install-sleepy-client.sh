@@ -30,4 +30,4 @@ Host $serverName
 
 " >> ~/.ssh/config
 
-ssh $serverName "npm install -g sleepy-server && install-sleepy-server $serverUser"
+ssh $serverName "npm install -g sleepy-server@latest && install-sleepy-server $serverUser"
