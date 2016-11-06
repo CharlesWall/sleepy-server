@@ -37,7 +37,7 @@ function cancelShutdown {
 }
 
 if [ $(checkForActiveUser) = "true" ]; then
-  log "user is active"
+  log "$user is active"
   cancelShutdown
   exit
 else
