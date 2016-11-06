@@ -1,6 +1,6 @@
 {
   "name": "sleepy-server",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "wake aws instance by id",
   "main": "index.js",
   "dependencies": {
@@ -17,7 +17,8 @@
   },
   "bin": {
     "wake-instance": "index.coffee",
-    "install-sleepy-server": "bin/install-server.sh"
+    "install-sleepy-server": "bin/install-sleepy-server.sh",
+    "install-sleepy-client": "bin/install-sleepy-client.sh"
   },
   "keywords": [
     "aws",

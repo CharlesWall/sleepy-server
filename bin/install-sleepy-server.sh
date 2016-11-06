@@ -2,7 +2,6 @@
 
 pushd .
 
-
 if [[ $(/usr/bin/id -u) -ne 0 ]]; then
     echo "this script must be run as root"
     sudo $0 `npm root -g`
@@ -15,8 +14,8 @@ crontabFile="/etc/crontab"
 
 #copy the files to a more permanent location
 echo 'Installing files' $1
-pwd
-stat $homeDir || mkdir -p $homeDir
+
+stat $homeDir 2> /dev/null || mkdir -p $homeDir
 cp $1/sleepy-server/bin/sleepy-server.sh $scriptFile
 chmod +x $scriptFile
 
@@ -24,7 +23,6 @@ chmod +x $scriptFile
 if [ -z "`grep $scriptFile $crontabFile`" ]; then
   echo "* * * * * root sh $scriptFile" >> $crontabFile
 fi
-rm tempcron
 
 echo 'Installation successful!'
 
