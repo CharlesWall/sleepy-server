@@ -16,7 +16,6 @@ read -p "AWS Profile Name: " -e awsProfileName
 read -p "User (ec2-user): " -e serverUser
 [ -z $serverUser ] && serverUser=ec2-user
 
-
 echo "\
 
 ##### sleepy-server:$serverName
@@ -31,4 +30,4 @@ Host $serverName
 
 " >> ~/.ssh/config
 
-ssh $serverName "npm install -g sleepy-server && install-sleepy-server"
+ssh $serverName "npm install -g sleepy-server && install-sleepy-server $serverUser"

@@ -1,5 +1,9 @@
 #!/bin/bash
-user='ec2-user'
+
+
+installDir="/etc/sleepy-server"
+
+user=`cat $installDir/user`
 logFile='/var/log/sleepy-server.log'
 shutdownDelay="30 minutes"
 
@@ -29,7 +33,7 @@ function cancelShutdown {
   if [ -e "/var/run/shutdown.pid" ]; then
     log 'canceling shutdown: because user is active'
     shutdown -c
-  fi 
+  fi
 }
 
 if [ $(checkForActiveUser) = "true" ]; then
